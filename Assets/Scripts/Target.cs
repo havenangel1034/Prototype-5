@@ -16,16 +16,18 @@ public class Target : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        targetRb = GetComponent<Rigidbody>();
+
+        targetRb.AddForce(RandomForce(), ForceMode.Impulse);
+        targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
+
+        transform.position = RandomSpawnPos();
     }
 
     // Update is called once per frame
     void Update()
     {
-        targetRb = GetComponent<Rigidbody>();
-        targetRb.AddForce(RandomForce(), ForceMode.Impulse);
-        targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
-        transform.position = RandomSpawnPos();
+       
     }
 
     Vector3 RandomForce()
