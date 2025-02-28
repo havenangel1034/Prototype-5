@@ -56,12 +56,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void StarGame(int difficulty)
+    public void StartGame(int difficulty)
     {
         isGameActive = true;
         StartCoroutine(SpawnTarget());
         score = 0;
-        spawnRate = spawnRate / difficulty;
+        spawnRate /= difficulty;
 
         scoreText.text = "Score: " + score;
         UpdateScore(0);
